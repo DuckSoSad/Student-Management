@@ -1,6 +1,6 @@
 # 📚 Student Management
 
-**Student Management** là một công cụ **quản lý sinh viên** đơn giản, hỗ trợ các thao tác **CRUD (Create - Read - Update - Delete)**.  
+**Student Management** là một công cụ **quản lý sinh viên** đơn giản, hỗ trợ các thao tác **CRUD (Create - Read - Update - Delete)** kết hợp **OOP**.  
 Ứng dụng được xây dựng bằng **PHP thuần kết hợp với MySQL**, giúp quản lý danh sách sinh viên dễ dàng và hiệu quả.
 
 🚀 **Phiên bản:** 1.0  
