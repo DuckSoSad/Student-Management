@@ -1,0 +1,20 @@
+{
+  "name": "khang/student-management",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Đức Khang",
+      "email": "tdkhangg2004@gmail.com"
+    }
+  ],
+  "require": {
+    "eftec/bladeone": "^4.18",
+    "phroute/phroute": "^2.2",
+    "nesbot/carbon": "^3.8"
+  }
+}
