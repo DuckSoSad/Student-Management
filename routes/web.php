@@ -14,28 +14,37 @@ $router->filter('auth', function () {
     }
 });
 
-$router->get('/', [\App\Controllers\HomeController::class, "index"]);
+$router->get('login', [\App\Controllers\Auth\AuthController::class, "showLogin"]);
+$router->post('login', [\App\Controllers\Auth\AuthController::class, "login"]);
+$router->post('logout', [\App\Controllers\Auth\AuthController::class, "logout"]);
+$router->get('register', [\App\Controllers\Auth\AuthController::class, "showRegister"]);
+$router->post('res', [\App\Controllers\Auth\AuthController::class, "register"]);
 
-$router->get('course', [\App\Controllers\CourseController::class, "index"]);
-$router->get('course/add', [\App\Controllers\CourseController::class, "add"]);
-$router->post('course/post', [\App\Controllers\CourseController::class, "post"]);
-$router->get('course/edit/{id}', [\App\Controllers\CourseController::class, "edit"]);
-$router->post('course/update/{id}', [\App\Controllers\CourseController::class, "update"]);
-$router->get('course/delete/{id}', [\App\Controllers\CourseController::class, "delete"]);
+$router->group(['prefix' => 'admin', 'before' => 'auth'], function ($router) {
+    $router->get('/', [\App\Controllers\Admin\HomeController::class, "index"]);
 
-$router->get('major', [\App\Controllers\MajorController::class, "index"]);
-$router->get('major/add', [\App\Controllers\MajorController::class, "add"]);
-$router->post('major/post', [\App\Controllers\MajorController::class, "post"]);
-$router->get('major/edit/{id}', [\App\Controllers\MajorController::class, "edit"]);
-$router->post('major/update/{id}', [\App\Controllers\MajorController::class, "update"]);
-$router->get('major/delete/{id}', [\App\Controllers\MajorController::class, "delete"]);
+    $router->get('course', [\App\Controllers\Admin\CourseController::class, "index"]);
+    $router->get('course/add', [\App\Controllers\Admin\CourseController::class, "add"]);
+    $router->post('course/post', [\App\Controllers\Admin\CourseController::class, "post"]);
+    $router->get('course/edit/{id}', [\App\Controllers\Admin\CourseController::class, "edit"]);
+    $router->post('course/update/{id}', [\App\Controllers\Admin\CourseController::class, "update"]);
+    $router->get('course/delete/{id}', [\App\Controllers\Admin\CourseController::class, "delete"]);
 
-$router->get('student', [\App\Controllers\StudentController::class, "index"]);
-$router->get('student/add', [\App\Controllers\StudentController::class, "add"]);
-$router->post('student/post', [\App\Controllers\StudentController::class, "post"]);
-$router->get('student/edit/{id}', [\App\Controllers\StudentController::class, "edit"]);
-$router->post('student/update/{id}', [\App\Controllers\StudentController::class, "update"]);
-$router->get('student/delete/{id}', [\App\Controllers\StudentController::class, "delete"]);
+    $router->get('major', [\App\Controllers\Admin\MajorController::class, "index"]);
+    $router->get('major/add', [\App\Controllers\Admin\MajorController::class, "add"]);
+    $router->post('major/post', [\App\Controllers\Admin\MajorController::class, "post"]);
+    $router->get('major/edit/{id}', [\App\Controllers\Admin\MajorController::class, "edit"]);
+    $router->post('major/update/{id}', [\App\Controllers\Admin\MajorController::class, "update"]);
+    $router->get('major/delete/{id}', [\App\Controllers\Admin\MajorController::class, "delete"]);
+
+    $router->get('student', [\App\Controllers\Admin\StudentController::class, "index"]);
+    $router->get('student/add', [\App\Controllers\Admin\StudentController::class, "add"]);
+    $router->post('student/post', [\App\Controllers\Admin\StudentController::class, "post"]);
+    $router->get('student/edit/{id}', [\App\Controllers\Admin\StudentController::class, "edit"]);
+    $router->post('student/update/{id}', [\App\Controllers\Admin\StudentController::class, "update"]);
+    $router->get('student/delete/{id}', [\App\Controllers\Admin\StudentController::class, "delete"]);
+});
+
 
 $dispatcher = new Dispatcher($router->getData());
 
