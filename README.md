@@ -43,58 +43,6 @@
 
 ---
 
-## 📥 Cài đặt và chạy dự án
-
-### 1️⃣ Clone repository
-
-```bash
-git clone https://github.com/DuckSoSad/student_management.git
-cd student_management
-2️⃣ Cấu hình cơ sở dữ liệu
-Tạo database student_management trong MySQL.
-
-Import file database.sql có sẵn trong thư mục project.
-
-Cấu hình kết nối database trong file config.php:
-
-php
-Sao chép
-Chỉnh sửa
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'student_management');
-3️⃣ Chạy project
-Nếu bạn đang sử dụng Laragon/XAMPP, chỉ cần truy cập trình duyệt và mở đường dẫn:
-
-👉 http://localhost/student_management
-
-🎯 Hướng dẫn sử dụng
-🔹 Truy cập trang chủ để xem danh sách sinh viên.
-🔹 Bấm nút "Thêm sinh viên" để thêm mới.
-🔹 Chỉnh sửa thông tin sinh viên bằng cách bấm nút "Sửa".
-🔹 Xoá sinh viên nếu không còn cần thiết.
-🔹 Sử dụng ô tìm kiếm để lọc danh sách nhanh chóng.
-
-📷 Giao diện ứng dụng
-🎨 Màn hình danh sách sinh viên
-
-📋 Màn hình thêm sinh viên
-
-🛠 Đóng góp & phát triển
-Mọi ý kiến đóng góp, tính năng mới hoặc báo cáo lỗi, vui lòng mở Issue hoặc gửi Pull Request trên GitHub.
-
-💡 Hướng dẫn đóng góp
-Fork repository này.
-
-Tạo một branch mới để phát triển tính năng (git checkout -b feature-new)
-
-Commit thay đổi của bạn (git commit -m "Thêm tính năng XYZ")
-
-Đẩy code lên (git push origin feature-new)
-
-Tạo Pull Request để xem xét.
-
 📩 Liên hệ
 📧 Email: tdkhangg2004@gmail.com
 🐙 GitHub: DuckSoSad
@@ -102,7 +50,6 @@ Tạo Pull Request để xem xét.
 ⭐ Hỗ trợ dự án
 Nếu bạn thấy dự án hữu ích, hãy:
 🌟 Star repo này trên GitHub!
-🍵 Mua cho tác giả một cốc cà phê (nếu thích 😂)
 
 📌 Bản quyền © 2025 DuckSoSad
 📄 Giấy phép: MIT License
