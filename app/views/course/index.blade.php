@@ -15,7 +15,6 @@
     @if (isset($_SESSION['success']) && isset($_GET['msg']))
         <div id="flash-msg"
             class="mb-6 mx-auto max-w-xl p-4 rounded-2xl bg-green-100 text-green-800 text-center text-lg font-semibold shadow-md transition-all duration-500">
-            <span>{{ $_SESSION['success'] }}</span>
         </div>
         <script>
             setTimeout(() => {
@@ -51,12 +50,11 @@
                             <td class="px-6 py-4 border border-gray-300">{{ $course->id }}</td>
                             <td class="px-6 py-4 border border-gray-300">{{ $course->name }}</td>
                             <td class="px-6 py-4 border border-gray-300">
-    {{ \Carbon\Carbon::parse($course->start_date)->format('d/m/Y') }}
-</td>
-<td class="px-6 py-4 border border-gray-300">
-    {{ \Carbon\Carbon::parse($course->end_date)->format('d/m/Y') }}
-</td>
-
+                                {{ \Carbon\Carbon::parse($course->start_date)->format('d/m/Y') }}
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                {{ \Carbon\Carbon::parse($course->end_date)->format('d/m/Y') }}
+                            </td>
                             <td class="px-6 py-4 border border-gray-300 space-x-3">
                                 <a href="{{ route('course/edit/' . $course->id) }}"
                                     class="inline-block px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 hover:scale-105 shadow-md transition-transform">Sửa</a>
@@ -73,5 +71,4 @@
         <p class="text-center text-lg text-gray-700 italic mt-10">Không có khóa học nào!</p>
     @endif
 
-    <?php unset($_SESSION['success']); ?>
 @endsection
