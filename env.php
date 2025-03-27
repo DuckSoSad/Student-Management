@@ -1,6 +1,6 @@
 <?php
-const BASE_URL = "http://localhost/Student_Management/";
-const BASE_IMAGE = "http://localhost/Student_Management/public/images/";
+const BASE_URL = "http://localhost/Student-Management/";
+const BASE_IMAGE = "http://localhost/Student-Management/public/images/";
 const DBHOST = "localhost";
 const DBNAME = "student_management";
 const DBCHARSET = "utf8";
