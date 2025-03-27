@@ -5,7 +5,7 @@
 <div class="max-w-5xl mx-auto mt-5 mb-5 bg-white p-8 rounded-xl shadow-lg border border-rose-100">
     <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-rose-700">Sửa Thông Tin Sinh Viên</h2>
-        <a href="{{ route('student') }}" class="inline-block">
+        <a href="{{ route('admin/student') }}" class="inline-block">
             <button type="button"
                 class="px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition">
                 Danh sách
@@ -13,7 +13,7 @@
         </a>
     </div>
 
-    <form action="{{ route('student/update/' . $student->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin/student/update/' . $student->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

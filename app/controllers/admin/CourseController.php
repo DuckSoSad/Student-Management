@@ -44,7 +44,7 @@ class CourseController extends BaseController
 
             if (count($errors) > 0) {
                 $_SESSION['post_data'] = $_POST;
-                redirect('errors', $errors, 'course/add');
+                redirect('errors', $errors, 'admin/course/add');
             } else {
                 $name = $_POST['name'];
                 $start_date = $_POST['start_date'];
@@ -53,7 +53,7 @@ class CourseController extends BaseController
                 $result = $this->courseModel->add($name, $start_date, $end_date);
 
                 if ($result) {
-                    redirect('success', 'Thêm mới thành công', 'course');
+                    redirect('success', 'Thêm mới thành công', 'admin/course');
                 }
             }
         }
@@ -83,7 +83,7 @@ class CourseController extends BaseController
 
             if (count($errors) > 0) {
                 $_SESSION['post_data'] = $_POST;
-                redirect('errors', $errors, 'course/edit/' . $id);
+                redirect('errors', $errors, 'admin/course/edit/' . $id);
             } else {
                 $name = $_POST['name'];
                 $start_date = $_POST['start_date'];
@@ -92,7 +92,7 @@ class CourseController extends BaseController
                 $result = $this->courseModel->edit($name, $start_date, $end_date, $id);
 
                 if ($result) {
-                    redirect('success', 'Cập nhật thành công', 'course');
+                    redirect('success', 'Cập nhật thành công', 'admin/course');
                 }
             }
         }
@@ -102,7 +102,7 @@ class CourseController extends BaseController
     {
         $result = $this->courseModel->delete($id);
         if ($result) {
-            redirect('success', 'Xóa thành công', 'course');
+            redirect('success', 'Xóa thành công', 'admin/course');
         }
     }
 }

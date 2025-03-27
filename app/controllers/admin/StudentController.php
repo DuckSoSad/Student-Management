@@ -69,7 +69,7 @@ class StudentController extends BaseController
 
             if (count($errors) > 0) {
                 $_SESSION['post_data'] = $_POST;
-                redirect('errors', $errors, 'student/add');
+                redirect('errors', $errors, 'admin/student/add');
             } else {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
@@ -87,11 +87,11 @@ class StudentController extends BaseController
                 if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
                     $result = $this->studentModel->add($avatarName, $name, $email, $phone, $dob, $gender, $address, $major_id, $course_id);
                     if ($result) {
-                        redirect('success', 'Thêm mới thành công', 'student');
+                        redirect('success', 'Thêm mới thành công', 'admin/student');
                     }
                 } else {
                     $errors[] = "Có lỗi xảy ra khi tải ảnh lên";
-                    redirect('errors', $errors, 'student/add');
+                    redirect('errors', $errors, 'admin/student/add');
                 }
             }
         }
@@ -157,7 +157,7 @@ class StudentController extends BaseController
 
             if (count($errors) > 0) {
                 $_SESSION['post_data'] = $_POST;
-                redirect('errors', $errors, 'student/edit/' . $id);
+                redirect('errors', $errors, 'admin/student/edit/' . $id);
             } else {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
@@ -170,10 +170,10 @@ class StudentController extends BaseController
 
                 $result = $this->studentModel->edit($avatarName, $name, $email, $phone, $dob, $gender, $address, $major_id, $course_id, $id);
                 if ($result) {
-                    redirect('success', 'Cập nhật thành công', 'student');
+                    redirect('success', 'Cập nhật thành công', 'admin/student');
                 } else {
                     $errors[] = "Có lỗi xảy ra khi cập nhật";
-                    redirect('errors', $errors, 'student/edit/' . $id);
+                    redirect('errors', $errors, 'admin/student/edit/' . $id);
                 }
             }
         }
@@ -183,7 +183,7 @@ class StudentController extends BaseController
     {
         $result = $this->studentModel->delete($id);
         if ($result) {
-            redirect('success', 'Xóa thành công', 'student');
+            redirect('success', 'Xóa thành công', 'admin/student');
         }
     }
 }

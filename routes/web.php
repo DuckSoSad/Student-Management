@@ -14,6 +14,7 @@ $router->filter('auth', function () {
     }
 });
 
+$router->get('/', [\App\Controllers\Auth\AuthController::class, "showLogin"]);
 $router->get('login', [\App\Controllers\Auth\AuthController::class, "showLogin"]);
 $router->post('login', [\App\Controllers\Auth\AuthController::class, "login"]);
 $router->post('logout', [\App\Controllers\Auth\AuthController::class, "logout"]);

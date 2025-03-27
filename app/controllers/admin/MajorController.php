@@ -38,14 +38,14 @@ class MajorController extends BaseController
 
             if (count($errors) > 0) {
                 $_SESSION['post_data'] = $_POST;
-                redirect('errors', $errors, 'major/add');
+                redirect('errors', $errors, 'admin/major/add');
             } else {
                 $name = $_POST['name'];
 
                 $result = $this->majorModel->add($name);
 
                 if ($result) {
-                    redirect('success', 'Thêm mới thành công', 'major');
+                    redirect('success', 'Thêm mới thành công', 'admin/major');
                 }
             }
         }
@@ -69,14 +69,14 @@ class MajorController extends BaseController
 
             if (count($errors) > 0) {
                 $_SESSION['post_data'] = $_POST;
-                redirect('errors', $errors, 'major/edit/' . $id);
+                redirect('errors', $errors, 'admin/major/edit/' . $id);
             } else {
                 $name = $_POST['name'];
 
                 $result = $this->majorModel->edit($name, $id);
 
                 if ($result) {
-                    redirect('success', 'Cập nhật thành công', 'major');
+                    redirect('success', 'Cập nhật thành công', 'admin/major');
                 }
             }
         }
@@ -86,7 +86,7 @@ class MajorController extends BaseController
     {
         $result = $this->majorModel->delete($id);
         if ($result) {
-            redirect('success', 'Xóa thành công', 'major');
+            redirect('success', 'Xóa thành công', 'admin/major');
         }
     }
 }

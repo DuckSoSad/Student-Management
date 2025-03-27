@@ -3,7 +3,7 @@
 
     <!-- Nút thêm khóa sinh viên mới -->
     <div class="flex justify-center my-8">
-        <a href="{{ route('major/add') }}">
+        <a href="{{ route('admin/major/add') }}">
             <button type="button"
                 class="px-6 py-3 bg-cyan-600 text-white text-lg font-semibold rounded-2xl shadow-xl hover:bg-cyan-700 active:scale-95 transition-transform">
                 + Thêm ngành học mới +
@@ -49,9 +49,9 @@
                             <td class="px-6 py-4 border border-gray-300">{{ $major->id }}</td>
                             <td class="px-6 py-4 border border-gray-300">{{ $major->name }}</td>
                             <td class="px-6 py-4 border border-gray-300 space-x-3">
-                                <a href="{{ route('major/edit/' . $major->id) }}"
+                                <a href="{{ route('admin/major/edit/' . $major->id) }}"
                                     class="inline-block px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 hover:scale-105 shadow-md transition-transform">Sửa</a>
-                                <a href="{{ route('major/delete/' . $major->id) }}"
+                                <a href="{{ route('admin/major/delete/' . $major->id) }}"
                                     class="inline-block px-4 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 hover:scale-105 shadow-md transition-transform"
                                     onclick="return confirm('Xóa thiệt hongg?!')">Xóa</a>
                             </td>

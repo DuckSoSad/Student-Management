@@ -3,7 +3,7 @@
 
     <!-- Nút thêm khóa sinh viên mới -->
     <div class="flex justify-center my-8">
-        <a href="{{ route('course/add') }}">
+        <a href="{{ route('admin/course/add') }}">
             <button type="button"
                 class="px-6 py-3 bg-cyan-600 text-white text-lg font-semibold rounded-2xl shadow-xl hover:bg-cyan-700 active:scale-95 transition-transform">
                 + Thêm khóa sinh viên mới +
@@ -56,9 +56,9 @@
                                 {{ \Carbon\Carbon::parse($course->end_date)->format('d/m/Y') }}
                             </td>
                             <td class="px-6 py-4 border border-gray-300 space-x-3">
-                                <a href="{{ route('course/edit/' . $course->id) }}"
+                                <a href="{{ route('admin/course/edit/' . $course->id) }}"
                                     class="inline-block px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 hover:scale-105 shadow-md transition-transform">Sửa</a>
-                                <a href="{{ route('course/delete/' . $course->id) }}"
+                                <a href="{{ route('admin/course/delete/' . $course->id) }}"
                                     class="inline-block px-4 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 hover:scale-105 shadow-md transition-transform"
                                     onclick="return confirm('Xóa thiệt hongg?!')">Xóa</a>
                             </td>
